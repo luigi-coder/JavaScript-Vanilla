@@ -82,12 +82,12 @@ class Computadora{
 
     static contadorComputadoras = 0;
 
-    constructor(nombre){
+    constructor(nombre,monitor,raton,teclado){
         this._idComputadora = ++Computadora.contadorComputadoras;
         this._nombre = nombre;
-        this._monitor = new Monitor("HP",15);
-        this._teclado = new Teclado("BLUETOOTH","Samsung");
-        this._raton = new Raton("USB","HP");
+        this._monitor = monitor;
+        this._teclado = teclado;
+        this._raton = raton;
     }
     get getIdComputadora(){
         return this._idComputadora;
@@ -120,7 +120,7 @@ class Computadora{
         this._raton = raton;
     }
     toString(){
-        return `Computadora 1:\n    IdComputadora: ${this._idComputadora}\n    Nombre: ${this._nombre}\n       ${this._monitor}\n       ${this._teclado}\n       ${this._raton}`
+        return `Computadora ${this._idComputadora}\n    Nombre: ${this._nombre}\n       ${this._monitor}\n       ${this._teclado}\n       ${this._raton}`
     }
 }
 
@@ -141,7 +141,7 @@ class Orden{
     mostrarOrden(){
         let productosOrden = '';
         for(let producto of this._computadoras){
-            productosOrden += '\n{' +producto.toString() + '}'
+            productosOrden += `\n ${producto.toString()}`;
         }
         console.log(`Orden ${this._idOrden}: ${productosOrden}`)
     }
@@ -150,8 +150,6 @@ class Orden{
 
 let raton1 = new Raton('USB','HP');
 console.log(raton1.toString());
-let raton2 = new Raton('BLUETOOTH','DELL');
-console.log(raton2.toString());
 
 let teclado1 = new Teclado('USB','APPLE');
 console.log(teclado1.toString());
@@ -159,9 +157,9 @@ console.log(teclado1.toString());
 let monitor1 = new Monitor('SAMSUNG', 15);
 console.log(monitor1.toString());
 
-let computadora1 = new Computadora('Computadora Gamer')
+let computadora1 = new Computadora('Computadora Gamer',monitor1,raton1,teclado1);
 console.log(computadora1.toString());
 
 let orden1 = new Orden();
 orden1.agregarComputadoras(computadora1);
-orden1.mostrarOrden()
+orden1.mostrarOrden();
