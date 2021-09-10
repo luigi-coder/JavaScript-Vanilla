@@ -189,22 +189,5 @@ let persona2 = {
 console.log(persona1.nombreCompleto('Doctor','40506070'));
 console.log(persona1.nombreCompleto.call(persona2, 'Ingeniero','10203040'));
 */
-// Metodo Apply
-let persona1 = {
-    nombre: "Juan",
-    apellido: "Perez",
-    nombreCompleto: function(titulo, telefono){
-        return `${titulo}: ${this.nombre} ${this.apellido} ${telefono} `
-    }
-}
 
-let persona2 = {
-    nombre: "Carlos",
-    apellido: "Lara"
-}
-// Uso de Apply para usar el metodo persona1.nombreCompleto
-// con los datos del persona2
-console.log(persona1.nombreCompleto('Doctor','40506070'));
-let arreglo = ['Ingeniero','10203040']
-console.log(persona1.nombreCompleto.apply(persona2, arreglo));
 

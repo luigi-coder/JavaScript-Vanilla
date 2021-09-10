@@ -1,6 +1,6 @@
 // Ciclo While
-/* 
-let contador = 0;
+
+/*let contador = 0;
 
 while(contador < 3){
     console.log(contador);
@@ -46,8 +46,8 @@ for (let i = 0; i <= 10; i++) {
     }
     console.log(i)
 }
-*/
 
+*/
 
 
 

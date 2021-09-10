@@ -30,7 +30,7 @@ class Raton extends DispositivoEntrada{
         return this._idRaton;
     }
     toString(){
-        return `RATON: [ IdRaton: ${this._idRaton}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca} ]`;
+        return `RATON:   [ IdRaton: ${this._idRaton}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca} ]`;
     }
 }
 class Teclado extends DispositivoEntrada{
@@ -135,15 +135,15 @@ class Orden{
     get idOrdenes(){
         return this._idOrden;
     }
-    agregarComputadoras(producto){
-        this._computadoras.push(producto);
+    agregarComputadoras(computadora){
+        this._computadoras.push(computadora);
     }
     mostrarOrden(){
-        let productosOrden = '';
-        for(let producto of this._computadoras){
-            productosOrden += `\n ${producto.toString()}`;
+        let computadorasOrden = '';
+        for(let computadora of this._computadoras){
+            computadorasOrden += `\n ${computadora.toString()}`;
         }
-        console.log(`Orden ${this._idOrden}: ${productosOrden}`)
+        console.log(`Orden ${this._idOrden}: ${computadorasOrden}`)
     }
 }
 

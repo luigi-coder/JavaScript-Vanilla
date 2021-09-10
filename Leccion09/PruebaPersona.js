@@ -1,10 +1,13 @@
 // EJERCICIO DE HERENCIA 
+// los miembros estáticos de las clases en Programación Orientada
+// a Objetos en general son atributos y métodos que dependen directamente 
+// de una clase, en vez de depender de un objeto en particular. 
 class Persona {
 
     static contadorPersonas = 0;
 
     constructor(nombre,apellido,edad){
-        this.idPersona = ++Persona.contadorPersonas;
+        this._idPersona = ++Persona.contadorPersonas;
         this._nombre = nombre;
         this._apellido = apellido;
         this._edad = edad;
@@ -32,7 +35,7 @@ class Persona {
         this._edad = edad;
     }
     toString(){
-        return `${this.idPersona} ${this._nombre} ${this._apellido} ${this._edad}`
+        return `${this._idPersona} ${this._nombre} ${this._apellido} ${this._edad}`
     }
 }
 
@@ -97,3 +100,49 @@ let cliente1 = new Cliente('Miguel','Cervantes',30, new Date());
 console.log(cliente1.toString());
 let cliente2 = new Cliente('Maria','Lara',38, new Date());
 console.log(cliente2.toString());
+
+
+
+class Animal{
+
+    constructor(nombre,raza,edad,origen){
+        this.nombre = nombre;
+        this.raza =raza;
+        this.edad = edad;
+        this.origen = origen;
+    }
+}
+
+let gato1 = {
+    nombre: "Alex",
+    raza: "Gato Persa",
+    edad:2,
+    origen: "Irán"
+}
+let gato2 = {
+    nombre: "Cosmo",
+    raza: "Bengala",
+    edad:3,
+    origen: "India"
+}
+let gato3 ={
+    nombre: "Felix",
+    raza: "Siamés",
+    edad:4,
+    origen: "Tailandia"
+}
+
+let animal = new Animal("Emma","Vizsla",3,"Hungria");
+let animal2 = new Animal("Vasco", "Boyero de berna",4,"Suiza")
+let animal3 = new Animal("Capitan","Jack Russell",2,"Inglaterra")
+
+const PERROS = [animal, animal2, animal3, gato1, gato2, gato3]
+console.log(PERROS)
+const ANIMALES = []
+
+for(const perro of PERROS){
+    console.log(perro.nombre)
+    ANIMALES.push(perro.nombre)
+}
+
+console.log(ANIMALES)
