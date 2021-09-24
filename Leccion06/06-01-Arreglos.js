@@ -24,4 +24,17 @@ console.log(Array.isArray(AUTOS))
 // Preguntamos si es una instancia de un arreglo
 console.log(AUTOS instanceof Array)
 
-   
+let array = ['Luis','Andy','Santi']
+// AGREGAR
+let nuevoUltimoLugar = array.push('Catalina')// agrega un valor
+// a la ultima posicion, me devuelve la longitud del array 
+let nuevoPrimerLugar = array.unshift('Ludmila') // agrega un valores
+// a la primera posicion, me devuelve la longitud del array 
+
+// QUITAR 
+let quitarUltimoLugar = array.pop() // toma el utlimo valor y lo quita 
+let quitarPrimerLugar = array.unshift() // toma el primer valor y lo quita
+
+// Indexof
+console.log(array.indexOf('Luis'))
+console.log(array.lastIndexOf('Luis'))
